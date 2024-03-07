@@ -40,27 +40,28 @@
                 <p class="account-text">¿No tienes una cuenta? <a href="#" id="sign-up-btn2">Registrarse</a></p>
             </form>
 
-            <form action="" class="sign-up">
+            <form method="post" action="send.php" class="sign-up">
                 <h2 class="title">Registrarse</h2>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Correo" required>
+                    <input type="email" placeholder="Correo" name="email" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Usuario" required>
+                    <input type="text" placeholder="Usuario" name="username" required>
                 </div>
             
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Contraseña" required>
+                    <input type="password" placeholder="Contraseña" name="password" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Confirmar contraseña" required>
+                    <input type="password" placeholder="Confirmar contraseña" name="confirm_password" required>
                 </div>
             
                 <input type="submit" value="Registrarse" class="btn">
+
                 <p class="social-text">Ó registrese de otra forma</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
