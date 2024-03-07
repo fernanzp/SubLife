@@ -61,6 +61,7 @@ body
 
 .navbar
 {
+    margin-left: 10px;
     display: flex;
 }
 
@@ -76,12 +77,21 @@ body
 .navbar a
 {
     display: block;
-    padding: 15px 20px;
+    padding: 3px 10px;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
     transition: 0.3s;
+    margin: 0px 10px;
+    background-image: linear-gradient(90deg, #fb2d6d, #f89400, #04a3b7);
+    font-weight: bold;
+    cursor:pointer;
+    background-repeat:no-repeat;
+    background-size: 0% 2px;
+    background-position: left bottom;
+    transition: background-size 300 ms ease-in-out;
+
 }
 
 .navbar_text_item:hover
@@ -89,24 +99,11 @@ body
     color: #079cc7;
     
 }
-.animated-line
-{
-  margin: 10px 30px;
-    font-size: 2rem;
-    background-image: linear-gradient(90deg, #fb2d6d, #f89400, #04a3b7);
-    text-decoration: none;
-    font-weight: bold;
-    cursor:pointer;
-    background-repeat:no-repeat;
-    background-size: 0% 2px;
-    background-position: left bottom;
-    transition: background-size 300 ms ease-in-out;
-}
-.animated-line:hover
-{
-  color: #079cc7;
-  background-size: 100% 2px;
 
+.navbar a:hover
+{
+    color: #079cc7;
+    background-size: 100% 2px;
 }
 
 /*.header
