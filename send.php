@@ -1,102 +1,35 @@
 <?php
+include('conection.php');
+
 // Verificar si se ha enviado el formulario
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recoger datos del formulario
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
 
-  // Recoger los datos del formulario
-  $email = $_POST['email'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $confirm_password = $_POST['confirm_password'];
-
-  // Verificar que las contraseñas coincidan
-  if ($password == $confirm_password) {
-
-    // Hashear la contraseña
-    //$hashed_password = password_hash($password, PASSWORD_DEFAULT);*/
-
-    // Conectar a la base de datos
-    $servername = "localhost";
-    $username_db = "fernando";
-    $password_db = "fernanpech2306";
-    $dbname = "sublife";
-
-    $connection = new mysqli($servername, $username_db, $password_db, $dbname);
-
-    // Verificar la conexión
-    if ($connection->connect_error) {
-      die("Error de conexión: " . $connection->connect_error);
-    } else {
-      echo "Conexión exitosa"; // Mensaje de debug
+    // Verificar si las contraseñas coinciden
+    if ($password != $confirm_password) {
+        echo "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
+        exit();
     }
 
-    try {
-      // Consulta para insertar datos en la tabla users
-      $sql = "INSERT INTO users (id, username, email, password) VALUES (NULL, '$username', '$email', '$password')";
+    /* Encriptar la contraseña antes de almacenarla en la base de datos (puedes usar otras técnicas de encriptación más seguras)
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);*/
 
-      // Ejecutar la consulta
-      $connection->query($sql);
+    // Consulta para insertar un nuevo usuario en la tabla "users"
+    $query = "INSERT INTO users (id, username, email, password, status) VALUES (NULL, '$username', '$email', '$password', 1)";
 
-      // Mostrar mensaje de éxito
-      echo "Registro exitoso";
-    } catch (mysqli_sql_exception $e) {
-      // Mostrar mensaje de error
-      echo "Error en la consulta: " . $e->getMessage();
+    // Ejecutar la consulta
+    if ($conexion->query($query) === TRUE) {
+        echo "Registro exitoso. ¡Bienvenido, $username!";
+    } else {
+        echo "Error al registrar el usuario: " . $conexion->error;
     }
 
     // Cerrar la conexión
-    $connection->close();
-
-  } else {
-    echo "La contraseña no coincide";
-  }
-} else {
-  echo "No se recibió el formulario correctamente"; // Mensaje de debug
+    $conexion->close();
 }
 
-/*
-	// Verificar si se ha enviado el formulario
-	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		// Recoger los datos del formulario
-		$email = $_POST['email'];
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$confirm_password = $_POST['confirm_password'];
-
-		// Verificar que las contraseñas coincidan
-		if ($password == $confirm_password) {
-			// Hashear la contraseña
-			$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-			// Conectar a la base de datos
-			$servername = "localhost";
-			$username_db = "fernando";
-			$password_db = "fernanpech2306";
-			$dbname = "sublife";
-
-			$connection = new mysqli($servername, $username_db, $password_db, $dbname);
-
-			// Verificar la conexión
-			if ($connection->connect_error) {
-				die("Error de conexión: " . $connection->connect_error);
-			} else {
-				echo "Conexión exitosa"; // Mensaje de debug
-			}
-
-			// Consulta para insertar datos en la tabla users
-			$sql = "INSERT INTO users (id, username, email, password) VALUES (NULL, '$username', '$email', '$hashed_password')";
-
-			if ($connection->query($sql) == TRUE) {
-				echo "Registro exitoso";
-			} else {
-				echo "Error en la consulta: " . $connection->error;
-			}
-
-			// Cerrar la conexión
-			$connection->close();
-		} else {
-			echo "La contraseña no coincide";
-		}
-	} else {
-		echo "No se recibió el formulario correctamente"; // Mensaje de debug
-	}*/
 ?>
