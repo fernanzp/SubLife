@@ -33,6 +33,12 @@ video{
     filter: brightness(0.8);
 }
 
+.icons{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
 .container
 {
     position: relative;
@@ -103,6 +109,24 @@ form.sign-up
     margin-bottom: 10px;
 }
 
+.error_message
+{
+    display: flex;
+    width: 100%;
+    color: #99a3a4;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e5e8e8;
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.alert_icon{
+    margin-right: 5px;
+}
+
 .input-field
 {
     width: 100%;
@@ -117,14 +141,14 @@ form.sign-up
     padding: 0px 15px;
 }
 
-.input-field i
+/*.input-field i
 {
     flex: 1;
     text-align: center;
     color: #666;
     font-size: 18px;
 
-}
+}*/
 
 .input-field input
 {
@@ -173,15 +197,26 @@ form.sign-up
 
 .social-icon
 {
-    height: 45px;
-    width: 45px;
+    height: 30px;
+    width: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000000;
-    border: 1px solid #444;
-    border-radius: 50px;
-    margin: 0 5px;
+    /*border: 1px solid #444;
+    border-radius: 50px;*/
+    margin: 0 10px;
+}
+
+.social-media-icon{
+    height: 30px;
+    width: 30px;
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+}
+
+.social-media-icon:hover{
+    fill: #071441;
 }
 
 a{
