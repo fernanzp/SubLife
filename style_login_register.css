@@ -39,6 +39,65 @@ video{
     height: 20px;
 }
 
+.main_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_regresar_container
+{
+    display: flex;
+    z-index: 1;
+    margin-bottom: 1vh;
+}
+
+.btn_regresar 
+{
+    display: flex;
+    width: auto;
+    height: 100%;
+    padding: 10px 20px;
+    background-color: #e5e8e8;
+    color: #99a3a4;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn_regresar:hover{
+    color: #e5e8e8;
+    background-color: #99a3a4;
+}
+
+.btn_regresar svg{
+    margin-right: 5px;
+    transform: rotate(180deg);
+}
+
+.btn_regresar svg path{
+    transition: fill 0.3s;
+}
+
+.btn_regresar:hover svg path {
+    fill: #e5e8e8;
+}
+
+.error_message
+{
+    display: flex;
+    width: 100%;
+    color: #99a3a4;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e5e8e8;
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
 .container
 {
     position: relative;

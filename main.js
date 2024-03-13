@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("down-arrow").addEventListener("click",scrollNotice)
 
 function scrollNotice(){
-    var sectionId = "title-noticias-container"
+    var sectionId = "main_news"
     var destinationSection = document.getElementById(sectionId);
     var destinationPosition = destinationSection.offsetTop;
     
