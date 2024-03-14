@@ -202,7 +202,7 @@ p
     align-items: center;
     justify-content: center;
     margin-top: 15px;
-    padding: 22px 30px 20px 20px;
+    padding: 20px 29px 17px 19px;
     color: #071441;
     text-transform: uppercase;
     text-decoration: none;
@@ -310,7 +310,7 @@ p
 }
 
 
-.box-container
+.news-container
 {
     display: flex;
     justify-content: center;
@@ -318,7 +318,7 @@ p
     text-align: center;
 }
 
-.box-container .box
+.news-container .new
 {
     height: 11rem;
     width: 17rem;
@@ -329,13 +329,13 @@ p
     margin: 2rem;
 }
 
-.box-container .box h3
+.news-container .new h3
 {
     font-size: 20px;
     color: aliceblue;
 }
 
-.box-container .box p
+.news-container .new p
 {
     padding: 0 15px;
     font-size: 16px;
