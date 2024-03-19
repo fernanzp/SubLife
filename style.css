@@ -309,38 +309,6 @@ p
     margin-left: 10vh;
 }
 
-
-.news-container
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.news-container .new
-{
-    height: 11rem;
-    width: 17rem;
-    background-color: #079cc7;
-    text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0 .3rem 5rem black;
-    margin: 2rem;
-}
-
-.news-container .new h3
-{
-    font-size: 20px;
-    color: aliceblue;
-}
-
-.news-container .new p
-{
-    padding: 0 15px;
-    font-size: 16px;
-}
-
 .about
 {
     background: #071441;
@@ -433,4 +401,71 @@ p
     opacity: 0;
     transform: translateY(20px);
   }
+}
+
+
+/***Apartado de noticias***/
+.news-container
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.new-container
+{
+    width: 800px;
+    height: 400px;
+    margin: 50px;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 .1rem 1.5rem black;
+}
+
+.new1
+{
+    margin-right: -6vh;
+}
+
+.new2
+{
+    margin-right: 6vh;
+}
+
+.new-container a
+{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.new-content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/img_2.jpg);
+    background-size: cover;
+    filter: brightness(0.8);
+}
+
+.news-container .new-content h3
+{
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-left: 5%;
+    text-transform: uppercase;
+}
+
+.news-container .new-content p
+{
+    font-size: 1.5rem;
+    padding: 0;
+    margin-left: 5%;
 }

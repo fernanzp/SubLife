@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +11,15 @@
     <link rel="shortcut icon" href="img/sublife_logo.png" type="">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery.ripples-min.js"></script>
 </head>
 <body>
-  <div class="preloader">  
+  <div class="preloader">
         <h1 id="preloader-text"></h1>
       </div>
       <div id="content" style="opacity: 0;">
-    <header class="container_head">
+    <header class="container_head" id="container_head">
         <div class="head">
             <div class="logo">
                 <a href="">
@@ -23,8 +29,16 @@
             <nav class="navbar">
                 <a href="">Noticias</a>
                 <a href="">Manzanillo</a>
-                <a href="">Donar</a>
-                <a href="login_register.html">Iniciar Sesión</a>
+                <?php
+                if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] == 1) {
+                    echo '<a href="post.html">Administrador</a>';
+                }
+                if(!empty($_SESSION['user_data']['id'])) {
+                    echo '<a href="logout.php">Cerrar Sesión</a>';
+                } else {
+                    echo '<a href="login_register.html">Iniciar Sesión</a>';
+                }
+                ?>
             </nav>
         </div>
         <div class="social_media_head">
@@ -79,11 +93,78 @@
                     <path fill="#071441" d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
                 </svg>Leer aquí</a>
         </div>
-        <div class="news-container">
+        <div class="news-container" id="news-container">
 
-            <div class="new">
-                <h3>Title</h3>
-                <p></p>
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -111,12 +192,10 @@
                 quisquam at sapiente? Culpa dolore dolorem animi voluptates,
                 ratione alias dignissimos enim eligendi reiciendis illo nesciunt.
             </p>
-
-            <a href="" class="btn">precio</a>
         </article>
     </section>
 
-    <section class="content contact">
+    <section class="content contact" id="footer">
         <figure class="map">
             <img src="img/sublife_logo.png" height="120px" width="100%" alt="mapa">
         </figure>
@@ -153,5 +232,35 @@
             </ul>
         </div>
     </section>
+    <script>
+        $(document).ready(function(){
+            $('#container_head').ripples({
+                resolution: 1024, // Cambia la resolución del efecto
+                dropRadius: 10,  // Cambia el tamaño de las gotas de agua
+                perturbance: 0.5 // Cambia la perturbación del agua
+                // Puedes agregar más opciones según tus necesidades
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#news-container').ripples({
+                resolution: 1024, // Cambia la resolución del efecto
+                dropRadius: 15,  // Cambia el tamaño de las gotas de agua
+                perturbance: 0.5 // Cambia la perturbación del agua
+                // Puedes agregar más opciones según tus necesidades
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#footer').ripples({
+                resolution: 1024, // Cambia la resolución del efecto
+                dropRadius: 10,  // Cambia el tamaño de las gotas de agua
+                perturbance: 0.5 // Cambia la perturbación del agua
+                // Puedes agregar más opciones según tus necesidades
+            });
+        });
+    </script>
 </body>
 </html>

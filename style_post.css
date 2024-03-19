@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    text-align: center;
+    font-family: Helvetica;
+}
+
+.video-container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.8);
+}
+
+.post-form {
+    margin: 50px auto; /* Centra el formulario en la página */
+    max-width: 600px; /* Establece un ancho máximo para el formulario */
+    padding: 20px;
+    background-color:#079cc7; /* Cambia el color de fondo del formulario */
+    border-radius: 8px; /* Añade bordes redondeados */
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.title
+{
+    font-size: 35px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.post-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; /* Añade negrita a las etiquetas */
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.post-form textarea{
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width: calc(100% - 22px);
+    height: 200%;
+    resize: none;
+}
+
+.post-form input[type="text"],
+.post-form select {
+    width: calc(100% - 22px); /* Ajusta el ancho para incluir el relleno y el borde */
+    color: #ffffff;
+    padding: 0px 15px;
+    margin-bottom: 20px;
+    border-radius: 50px; /* Añade bordes redondeados */
+    box-sizing: border-box; /* Asegura que el tamaño del campo incluya el relleno y el borde */
+    resize: none;
+    text-align: center;
+}
+
+.input-field
+{
+    width: 100%;
+    height: 50px;
+    background: #071441;
+    color: #ffffff;
+    margin: 10px 0;
+    /*border: 2px solid cyan;*/
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    font-weight: bold;
+}
+
+.post-form input[type="file"] {
+    width: calc(100% - 22px); /* Ajusta el ancho para incluir el relleno y el borde */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 50px; /* Añade bordes redondeados */
+    box-sizing: border-box; /* Asegura que el tamaño del campo incluya el relleno y el borde */
+    text-align:center;
+    
+}
+
+
+.post-form input[type="date"] {
+    width: calc(100% - 22px); /* Ajusta el ancho para incluir el relleno y el borde */
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px; /* Añade bordes redondeados */
+    box-sizing: border-box; /* Asegura que el tamaño del campo incluya el relleno y el borde */
+}
+
+.post-form input[type="text"] {
+    text-align: center;
+}
+
+.input-field
+{
+    width: 100%;
+    height: 50px;
+    background: #071441;
+    color: #ffffff;
+    margin: 10px 0;
+    /*border: 2px solid cyan;*/
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    border: none;
+}
+.input-field input
+{
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+
+.btn
+{
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background: #071441;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn:hover
+{
+    background: #1f3c86;
+}
+
+.form-file {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+	margin-bottom: 20px;
+    width: calc(100% - 22px);
+}
+.form-file__action {
+	width: 100%;
+}
+.form-file__action label {
+	display: block;;
+
+}
+.form-file__action label.title {
+	width: 100%;
+	text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+}
+.form-file__action input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	display: none;
+}
+.form-file__result {
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 250px;
+	background-color: #f2f0f0;
+	border-radius: 8px;
+	border: 1px dashed #609dd6;
+	transition: bacgroundColor 0.3s linear;
+	z-index: 10;
+}
+.form-file__result::after {
+	content: 'Clic para elegir imagen.';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: #609dd6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-file__result img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 50;
+}
+.form-file__result--active {
+	background-color: rgba(82, 81, 79, 0.314);
+}
+
+
+.video-container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.8);
+}
+/* Cambios en el estilo del campo de carga de archivos */
+/* Cambios en el estilo del campo de carga de archivos */
+
+.form-file-pdf {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+	margin-bottom: 20px;
+    width: calc(100% - 22px);
+}
+.form-file-pdf__action {
+    width: 100%;
+    /* Añadir estilos de botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #071441;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.form-file-pdf__action label.title {
+    /* Eliminar estilos de título para texto de botón */
+    display: none;
+}
+
+.form-file-pdf__result {
+    /* Reducir el tamaño del área de carga de archivos PDF */
+    height: 100px; /* Ajusta según sea necesario */
+    background-color: #f2f0f0;
+    border-radius: 8px;
+    border: 1px dashed #609dd6;
+    transition: background-color 0.3s linear;
+    z-index: 10;
+}
+
+.form-file-pdf__result::after {
+    content: 'Soltar archivo PDF aquí o hacer clic para elegir.'; /* Actualizar el texto de instrucción */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #609dd6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
