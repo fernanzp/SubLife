@@ -14,8 +14,7 @@
         </video>
     </div>
 
-    <form method="POST" action="send_post.php" class="post-form">
-        <!--enctype="multipart/form-data"-->
+    <form method="POST" action="send_post.php" class="post-form" enctype="multipart/form-data">
         <h2 class="title">Nueva publicación</h2>
         <input class="input-field" type="text" id="title" placeholder="Titulo" name="title" required>
 
@@ -28,7 +27,7 @@
             <option value="Fauna">Fauna</option>
         </select>-->
         
-        <!--<div class="form-file">
+        <div class="form-file">
             <div class="form-file__action">
                 <label for="image" class="title">Imagen</label>
                 <input type="file" name="image" id="image" />
@@ -36,7 +35,7 @@
             <div class="form-file__result" id="result-image">
                 <img id="img-result" alt="" />
             </div>
-        </div>-->
+        </div>
         <!--<div class="form-file-pdf">
             <div class="form-file-pdf__action">
                 <label for="pdf" class="title">Publicación en PDF</label>

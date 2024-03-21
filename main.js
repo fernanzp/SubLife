@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Boton Scroll Noticias
 
-document.getElementById("down-arrow").addEventListener("click",scrollNotice)
+document.getElementById("down-arrow").addEventListener("click",scrollNews)
 
-function scrollNotice(){
+function scrollNews(){
     var sectionId = "main_news"
     var destinationSection = document.getElementById(sectionId);
     var destinationPosition = destinationSection.offsetTop;
@@ -23,6 +23,19 @@ function scrollNotice(){
         window.scrollTo(0,currentScroll-(currentScroll/5))
     }*/
 }
+
+function scrollMzo(){
+    var sectionId = "mzo"
+    var destinationSection = document.getElementById(sectionId);
+    var destinationPosition = destinationSection.offsetTop;
+    
+    window.scrollTo({
+        top: destinationPosition,
+        behavior: 'smooth' // Esto hace que el scroll sea suave
+    })
+}
+
+
 //Precarga de la pagina
 const preloaderText = document.getElementById("preloader-text");
 const content = document.getElementById("content");
@@ -64,6 +77,11 @@ function showLetters(index) {
   }
   
 
+//
+
+
 // Inicia la animación al cargar la página
 showLetters(0); 
+document.getElementById("go-to-news").addEventListener("click",scrollNews)
+document.getElementById("go-to-mzo").addEventListener("click",scrollMzo)
 }); //Final de todo

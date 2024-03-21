@@ -27,8 +27,8 @@
                 </a>
             </div>
             <nav class="navbar">
-                <a href="">Noticias</a>
-                <a href="">Manzanillo</a>
+                <div id="go-to-news">Noticias</div>
+                <div id="go-to-mzo">Manzanillo</div>
                 <?php
                 if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] == 1) {
                     echo '<a href="post.html">Administrador</a>';
@@ -170,23 +170,88 @@
     </div>
 
 
-    <!--<section class="content about">
+    <section class="content sau">
+        <h2 class="title" id="mzo">Manzanillo</h2>
+        <div class="news-container" id="news-container2">
 
-        <h2 class="title">Nosotros</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores totam officiis est quas corporis,
-            quisquam at sapiente? Culpa dolore dolorem animi voluptates,
-            ratione alias dignissimos enim eligendi reiciendis illo nesciunt.
-        </p>
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
 
-        <a href="" class="btn">saber mas</a>
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
 
-    </section>-->
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new1">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="new-container new2">
+                <a href="#">
+                    <div class="new-content">
+                        <h3>Title</h3>
+                        <p>20/04/2024</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <section class="content price">
 
         <article class="contain">
-            <h2 class="title">precio</h2>
+            <h2 class="title">Acerca de Nosotros</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores totam officiis est quas corporis,
                 quisquam at sapiente? Culpa dolore dolorem animi voluptates,
@@ -257,6 +322,16 @@
             $('#footer').ripples({
                 resolution: 1024, // Cambia la resolución del efecto
                 dropRadius: 10,  // Cambia el tamaño de las gotas de agua
+                perturbance: 0.5 // Cambia la perturbación del agua
+                // Puedes agregar más opciones según tus necesidades
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#news-container2').ripples({
+                resolution: 1024, // Cambia la resolución del efecto
+                dropRadius: 15,  // Cambia el tamaño de las gotas de agua
                 perturbance: 0.5 // Cambia la perturbación del agua
                 // Puedes agregar más opciones según tus necesidades
             });
