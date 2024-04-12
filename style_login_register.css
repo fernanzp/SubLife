@@ -1,456 +1,408 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
 }
 
-body
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    /*el vh significa viewport height ó altura del dispositivo*/
-    background: #65C5DA;
+body{
+	overflow: hidden;
 }
 
-.video-container
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+/*Barra superior de navegación login*/
+.navbarlogin{
+	background: transparent;
+	width: 100%;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	padding: 8px 12px 8px 12px;
+	z-index: 999;
+	opacity: 1;
+	transition: opacity 0.5s ease;
 }
 
-video{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    filter: brightness(0.8);
+.navbarlogin-logo{
+	margin-left: 14px;
+	height: 70px;
 }
 
-.icons{
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
+.navbarlogin-options{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 2%;
 }
 
-.main_container{
-    display: flex;
-    flex-direction: column;
+.navbarlogin-options a{
+	color: #ffffff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	background-image: linear-gradient(90deg, #fb2d6d, #f89400, #04a3b7);
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	background-position: left bottom;
+	transition: background-size 0.3s ease-in-out;
 }
 
-.btn_regresar_container
-{
-    display: flex;
-    z-index: 1;
-    margin-bottom: 1vh;
+.navbarlogin a:hover{
+	color: #079cc7;
+	background-size: 100% 2px;
 }
 
-.btn_regresar 
-{
-    display: flex;
-    width: auto;
-    height: 100%;
-    padding: 10px 20px;
-    background-color: #e5e8e8;
-    color: #99a3a4;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
+/*Barra superior de navegación responsive para tablets*/
+@media (max-width: 834px){
+	.navbarlogin-logo, .navbarregister-logo{
+		height: 60px;
+	}
+
+	.navbarlogin-options a, .navbarregister-options a{
+		font-size: 18px;
+	}
 }
 
-.btn_regresar:hover{
-    color: #e5e8e8;
-    background-color: #99a3a4;
+/*Barra superior de navegación responsive para celulares*/
+@media (max-width: 480px){
+	.navbarlogin, .navbarregister{
+		padding: 8px 0;
+	}
+
+	.navbarlogin-logo{
+		margin-left: 18px;
+	}
+
+	.navbarregister-logo{
+		margin-right: 18px;
+	}
+
+	.navbarlogin-options a, .navbarregister-options a{
+		font-size: 20px;
+	}
 }
 
-.btn_regresar svg{
-    margin-right: 5px;
-    transform: rotate(180deg);
+/*Barra superior de navegación register*/
+.navbarregister{
+	background: transparent;
+	width: 100%;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	padding: 8px 12px 8px 12px;
+	z-index: 998;
+	opacity: 0;
+	transition: opacity 0.5s ease;
 }
 
-.btn_regresar svg path{
-    transition: fill 0.3s;
+.navbarregister-logo{
+	margin-right: 14px;
+	height: 70px;
 }
 
-.btn_regresar:hover svg path {
-    fill: #e5e8e8;
+.navbarregister-options{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: 2%;
 }
 
-.error_message
-{
-    display: flex;
-    width: 100%;
-    color: #99a3a4;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #e5e8e8;
-    margin: 10px 0;
-    align-items: center;
-    justify-content: center;
-    display: none;
+.navbarregister-options a{
+	color: #ffffff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	background-image: linear-gradient(90deg, #fb2d6d, #f89400, #04a3b7);
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	background-position: left bottom;
+	transition: background-size 0.3s ease-in-out;
 }
 
-.container
-{
-    position: relative;
-    width: 70vw;
-    height: 80vh;
-    background-color: #079cc7;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+.navbarregister-options a:hover{
+	color: #079cc7;
+	background-size: 100% 2px;
 }
 
-.container::before
-{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #079cc7, #071441);
-    z-index: 6;
-    transform: translateX(100%);
-    transition: 1s ease-in-out;
+/*Barra superior de navegación responsive para tablets*/
+@media (max-width: 834px){
+	.navbarlogin-logo{
+		height: 60px;
+	}
+
+	.navbarlogin-options a{
+		font-size: 18px;
+	}
 }
 
-.signin-up
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 5;
+/*Barra superior de navegación responsive para celulares*/
+@media (max-width: 480px){
+	.navbarlogin{
+		padding: 8px 0;
+	}
+
+	.navbarlogin-logo{
+		margin-left: 18px;
+	}
+
+	.navbarlogin-options a{
+		font-size: 20px;
+	}
 }
 
-form
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 40%;
-    min-width: 238px;
-    padding: 0 10px;
+/*Video de fondo*/
+.video-container{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
 }
 
-form.sign-in
-{
-    opacity: 1;
-    transition: 0.5s ease-in-out;
-    transition-delay: 1s;
+.video-container::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to right, #071441, transparent);
+	z-index: 0;
 }
 
-form.sign-up
-{
-    opacity: 0;
-    transition: 0.5s ease-in-out;
-    transition-delay: 1s;
+.video{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-.title
-{
-    font-size: 35px;
-    color: #ffffff;
-    margin-bottom: 10px;
+/*Fondo del login y register*/
+.background-loginregister{
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 100%;
+	height: 100vh;
+	background: #071441;
+	transition: transform 0.5s ease;
 }
 
-.error_message
-{
-    display: flex;
-    width: 100%;
-    color: #99a3a4;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #e5e8e8;
-    margin: 10px 0;
-    align-items: center;
-    justify-content: center;
-    display: none;
+/*Contenedor del login y register*/
+.container-loginregister{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.alert_icon{
-    margin-right: 5px;
+/*Login*/
+.login{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
+	height: 100%;
+	left: 0;
+	transition: transform 0.5s ease;
 }
 
-.input-field
-{
-    width: 100%;
-    height: 50px;
-    background: #071441;
-    color: #ffffff;
-    margin: 10px 0;
-    /*border: 2px solid cyan;*/
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    padding: 0px 15px;
+.login h2, .register h2{
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 50px;
 }
 
-/*.input-field i
-{
-    flex: 1;
-    text-align: center;
-    color: #666;
-    font-size: 18px;
-
-}*/
-
-.input-field input
-{
-    flex: 5;
-    background: none;
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
+.login p, .register p{
+	color: #ffffff;
+	font-size: 17px;
 }
 
-.btn
-{
-    color: #ffffff;
-    width: 150px;
-    height: 50px;
-    border: none;
-    border-radius: 50px;
-    background: rgba(2, 186, 228, 0.753);
-    background: #071441;
-    font-weight: 600;
-    margin: 10px 0;
-    text-transform: uppercase;
-    cursor: pointer;
+.login a, .register a{
+	color: #079cc7;
 }
 
-.btn:hover
-{
-    background: #1f3c86;
+.login form, .register form{
+	width: 70%;
 }
 
-.social-text
-{
-    color: #ffffff;
-    margin: 10px 0;
-    font-size: 16px;
+.login-inputcontainer{
+	position: relative;
+	margin: 10% 0;
+	width: 100%;
+	overflow: hidden;
 }
 
-.social-media
-{
-    display: flex;
-    justify-content: center;
+.login-inputcontainer input{
+	width: 100%;
+	padding: 30px 16px 12px 16px;
+	border-radius: 12px;
+	background: #0e2951;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	outline: 0px;
 }
 
-.social-icon
-{
-    height: 30px;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-    /*border: 1px solid #444;
-    border-radius: 50px;*/
-    margin: 0 10px;
+.lbl{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
 }
 
-.social-media-icon{
-    height: 30px;
-    width: 30px;
-    fill: #ffffff;
-    transition: fill 0.3s ease;
+.text-span{
+	position: absolute;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	bottom: 18px;
+	left: 15px;
+	transition: all 0.3s ease;
 }
 
-.social-media-icon:hover{
-    fill: #071441;
+.login-inputcontainer input:focus + .lbl .text-span,.login-inputcontainer input:valid + .lbl .text-span{
+	transform: translateY(-100%);
+	font-size: 14px;
+	color: #079cc7;
 }
 
-a{
-    text-decoration: none;
+.login-btn, .register-btn{
+	width: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	color: #ffffff;
+	background: #079cc7;
+	padding: 16px;
+	border-radius: 32px;
+	border: none;
+	cursor: pointer;
 }
 
-.social-icon:hover
-{
-    color: #017ab1;
-    border-color: #0499d8;
+/*Barra superior de navegación responsive para tablets*/
+@media (max-width: 834px){
+
 }
 
-.panels-container
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+/*Barra superior de navegación responsive para celulares*/
+@media (max-width: 480px){
+	
 }
 
-.panel
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 30%;
-    min-width: 238px;
-    padding: 0 10px;
-    text-align: center;
-    z-index: 6;
+
+
+/*Register*/
+.register{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
+	height: 100%;
+	right: -50%;
+	transition: transform 0.5s ease;
 }
 
-.left-panel
-{
-    pointer-events: none;
+.register h2{
+	text-align: center;
 }
 
-/*Error en la animcación*/
-.content
-{
-    color: white;
-    transition: 1.1s ease-in-out;
-    transition-delay: 0.5s;
+.register-errormessage{
+	display: flex;
+	width: 100%;
+	color: #99a3a4;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #e5e8e8;
+	align-items: center;
+	justify-content: center;
+	margin: 3% 0;
 }
 
-/*panel h3 y p son para los textos en los paneles*/
-.panel h3
-{
-    font-size: 28px;
-    font-weight: 600;
+.uno{
+	margin: 3% 0 10% 0;
 }
 
-.panel p
-{
-    font-size: 17px;
-    padding: 10px 0;
+.register-errormessage p{
+	margin-left: 5px;
+	color: #99a3a4;
 }
 
-.image
-{
-    width: 100%;
-    transition: 1.1s ease-in-out;
-    transition-delay: 0.4s;
+.login-inputcontainer input{
+	width: 100%;
+	padding: 30px 16px 12px 16px;
+	border-radius: 12px;
+	background: #0e2951;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	outline: 0px;
 }
 
-.left-panel .image,
-.left-panel .content
-{
-    /*Error en la animación*/
-    transform: translateX(-200%);
+
+/*Animación de login a register*/
+.background-loginregister.translate-to-register{
+	transform: translateX(100%);
 }
 
-.right-panel .image,
-.right-panel .content
-{
-    transform: translateX(0);
+.video-container.translate-to-register::before{
+	left: 0;
+	background: linear-gradient(to left, #071441, transparent);
 }
 
-.account-text
-{
-    display: none;
+.login.translate-to-register{
+	transform: translateX(-100%);
 }
 
-/*animacion*/
-.container.sign-up-mode::before
-{
-    transform: translateX(0);
+.register.translate-to-register{
+	transform: translateX(-100%);
 }
 
-.container.sign-up-mode .right-panel .image,
-.container.sign-up-mode .right-panel .content
-{
-    transform: translateX(200%);
+.navbarlogin.translate-to-register{
+	opacity: 0;
+	z-index: 998;
 }
 
-.container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content
-{
-    transform: translateX(0);
+.navbarregister.translate-to-register{
+	opacity: 1;
+	z-index: 999;
 }
 
-.container.sign-up-mode form.sign-in
-{
-    opacity: 0;
+/*Animación de register a login*/
+.background-loginregister.translate-to-login{
+	transform: translateX(0%);
 }
 
-.container.sign-up-mode form.sign-up
-{
-    opacity: 1;
+.video-container.translate-to-login::before{
+	left: 50%;
+	background: linear-gradient(to right, #071441, transparent);
 }
 
-.container.sign-up-mode .right-panel
-{
-    pointer-events: none;
-}
-.container.sign-up-mode .left-panel
-{
-    pointer-events: all;
-}
-/*hacer que sea responsivo*/
-@media (max-width:779px)
-{
-    .container
-    {
-        width: 100vw;
-        height: 100vh;
-    }
+.login.translate-to-login{
+	transform: translateX(0%);
 }
 
-@media (max-width:635px)
-{
-    .container::before
-    {
-        display: none;
-    }
-    form
-    {
-        width: 80%
-    }
-    form.sign-up
-    {
-        display: none;
-    }
-
-    /*Los siguientes dos son para el login y el register responsivo*/
-    .container.sign-up-mode2 form.sign-up
-    {
-        display: flex;
-        opacity: 1;
-    }
-    .container.sign-up-mode2 form.sign-in
-    {
-        display: none;
-    }
-    .account-text
-    {
-        display: initial;
-        margin-top: 30px;
-    }
-
-    .panels-container
-    {
-        display: none;
-    }
+.register.translate-to-login{
+	transform: translateX(0%);
 }
 
-@media (max-width:320px)
-{
-    form
-    {
-        width: 90%;
-    }
+.navbarlogin.translate-to-login{
+	opacity: 1;
+	z-index: 999;
+}
+
+.navbarregister.translate-to-login{
+	opacity: 0;
+	z-index: 998;
 }
