@@ -34,10 +34,10 @@
                     <a id="go-to-mzo">Manzanillo</a>
                     <?php
                         if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] == 1) {
-                            echo '<a href="">Administrador</a>';
+                            echo '<a href="newpost.php">Nueva Publicación</a>';
                         }
                         if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] == 2) {
-                            echo '<a href="newpost.php">Nueva Publicación</a>';
+                            echo '<a href="admin.php">Administrador</a>';
                         }
                         if(!empty($_SESSION['user_data']['id'])) {
                             echo '<a href="logout.php">Cerrar Sesión</a>';
@@ -99,8 +99,8 @@
     <!--Main News-->
     <div class="mainnews-container" id="mainnews-container">
         <div class="mainnews">
-            <h2 class="mainnews-title">Nuevo acuerdo mundial impulsa la protección de los mares</h2>
-            <p>20/04/2024</p>
+            <h2 class="mainnews-title">Minería submarina, el nuevo riesgo para la vida submarina</h2>
+            <p>03/05/2024</p>
             <a href="" class="mainnews-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
                 <path fill="#071441" d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
@@ -110,40 +110,40 @@
 
     <!--News-->
     <div class="news-container" id="news-container">
-        <div class="news-newscontainer new1">
+        <div class="news-newscontainer new1 n1">
+            <a href="#" class="news-newcontent">
+                <h3>Un paso crucial para la salud del mar: Perú aprueba la creación de la Reserva Nacional Mar Tropical de Grau</h3>
+                <p>29/04/2024</p>
+            </a>
+        </div>
+        <div class="news-newscontainer new2 n2">
+            <a href="#" class="news-newcontent">
+                <h3>El Cambio Climático Podría Causar Olas de Frío Severas en los Mares</h3>
+                <p>15/04/2024</p>
+            </a>
+        </div>
+        <div class="news-newscontainer new1 n3">
+            <a href="#" class="news-newcontent">
+                <h3>Upcycling the Oceans Implementa Tecnología de Satlink para Proteger Áreas Marinas</h3>
+                <p>03/04/2024</p>
+            </a>
+        </div>
+        <div class="news-newscontainer new2 n4">
+            <a href="#" class="news-newcontent">
+                <h3>El Pez Vela</h3>
+                <p>10/03/2024</p>
+            </a>
+        </div>
+        <div class="news-newscontainer new1 n5">
+            <a href="#" class="news-newcontent">
+                <h3>La Ballena Azul</h3>
+                <p>6/03/2024</p>
+            </a>
+        </div>
+        <div class="news-newscontainer new2 n6">
             <a href="#" class="news-newcontent">
                 <h3>Nuevo acuerdo mundial impulsa la protección de los mares</h3>
-                <p>20/04/2024</p>
-            </a>
-        </div>
-        <div class="news-newscontainer new2">
-            <a href="#" class="news-newcontent">
-                <h3>Title</h3>
-                <p>20/04/2024</p>
-            </a>
-        </div>
-        <div class="news-newscontainer new1">
-            <a href="#" class="news-newcontent">
-                <h3>Title</h3>
-                <p>20/04/2024</p>
-            </a>
-        </div>
-        <div class="news-newscontainer new2">
-            <a href="#" class="news-newcontent">
-                <h3>Title</h3>
-                <p>20/04/2024</p>
-            </a>
-        </div>
-        <div class="news-newscontainer new1">
-            <a href="#" class="news-newcontent">
-                <h3>Title</h3>
-                <p>20/04/2024</p>
-            </a>
-        </div>
-        <div class="news-newscontainer new2">
-            <a href="#" class="news-newcontent">
-                <h3>Title</h3>
-                <p>20/04/2024</p>
+                <p>2/03/2024</p>
             </a>
         </div>
     </div>

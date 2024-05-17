@@ -285,7 +285,7 @@
 	height: calc(100vh - 92px);
 	margin-top: auto;
 	width: 100%;
-	background: url('img/main.jpg') no-repeat center center;
+	background: url('img/Portada_a7.jpg') no-repeat center center;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
@@ -608,4 +608,25 @@
 	.footer-logo{
 		height: 80px;
 	}
+}
+
+/*Provicional*/
+.n1{
+	background-image: url(img/Portada_a8.jpeg);
+}
+
+.n2{
+	background-image: url(img/Portada_a6.jpeg);
+}
+.n3{
+	background-image: url(img/Portada_a5.jpeg);
+}
+.n4{
+	background-image: url(img/Portada_a4.jpg);
+}
+.n5{
+	background-image: url(img/Portada_a2.jpeg);
+}
+.n6{
+	background-image: url(img/Portada_a1.jpeg);
 }
