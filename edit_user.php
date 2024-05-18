@@ -50,24 +50,40 @@
     </header>
 
     <!--Editar usuario-->
-    <div class="edit_user">
+    <div class="edituser">
         <h2>Editar Usuario</h2> 
         <form action="update_user.php" method="POST">
             <!--<input type="text" name="user_id" value="<?php /*echo $userId; */?>">-->
-            <label for="username">Nombre de Usuario:</label>
-            <input type="text" id="username" name="username" value="<?php echo $username; ?>" required><br>
+            <div class="edituser-inputcontainer">
+                <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
+                <label class="lbl">
+                    <span class="text-span">Usuario</span>
+                </label>
+            </div>
 
-            <label for="email">Correo</label>
-            <input type="email" id="email" name="email" value="<?php echo $email; ?>" required><br>
+            <div class="edituser-inputcontainer">
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+                <label class="lbl">
+                    <span class="text-span">Correo</span>
+                </label>
+            </div>
 
-            <label for="role">Rol:</label>
-            <input type="text" id="role" name="role" value="<?php echo $role; ?>"><br>
+            <div class="edituser-inputcontainer">
+                <input type="text" id="role" name="role" value="<?php echo $role; ?>">
+                <label class="lbl">
+                    <span class="text-span">Rol</span>
+                </label>
+            </div>
 
-            <label for="status">Estado:</label>
-            <input type="text" id="status" name="status" value="<?php echo $status; ?>"><br>
+            <div class="edituser-inputcontainer">
+                <input type="text" id="status" name="status" value="<?php echo $status; ?>">
+                <label class="lbl">
+                    <span class="text-span">Estado</span>
+                </label>
+            </div>
 
             <input type="hidden" name="user_id" value="<?php echo $userId; ?>">
-            <button type="submit">Guardar</button>
+            <button type="submit" class="edituser-btn">Guardar</button>
         </form>
     </div>
 </body>

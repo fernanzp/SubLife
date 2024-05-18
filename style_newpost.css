@@ -62,7 +62,8 @@
 /*Nueva publicación*/
 .newpost{
 	width: 100%;
-	height: 100vh;
+	height: auto;
+	min-height: 100vh;
 	background: #071441;
 	display: flex;
 	flex-direction: column;
@@ -78,19 +79,19 @@
 }
 
 .newpost form{
-	width: 40%;
+	width: 50%;
 }
 
 .newpost-inputcontainer{
 	position: relative;
-	margin: 6% 0;
+	margin: 4% 0;
 	width: 100%;
 	overflow: hidden;
 }
 
 .newpost-inputcontainer_body{
 	position: relative;
-	margin: 6% 0;
+	margin: 4% 0;
 	width: 100%;
 }
 
@@ -101,7 +102,6 @@
 	background: #0e2951;
 	color: #ffffff;
 	font-size: 18px;
-	font-weight: bold;
 	border: none;
 	outline: 0px;  brhkgbrwuyfbgry4efvfe32yvde
 }
@@ -157,6 +157,12 @@
 	border-radius: 32px;
 	border: none;
 	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.newpost-btn:hover{
+	color: #079cc7;
+	background: #ffffff;
 }
 
 /*Subir una imagen y pdf*/
@@ -166,7 +172,7 @@
 	width: 100%;
 	border-radius: 12px;
 	background: #0e2951;
-	margin-bottom: 6%;
+	margin-bottom: 4%;
 	transition: 0.5s ease;
 }
 
@@ -189,7 +195,6 @@
 	font-weight: bold;
 	cursor: pointer;
 	margin: 14px 14px 14px 16px;
-	cursor: pointer;
 }
 
 .newpost-image:hover label, .newpost-pdf:hover label{
@@ -200,8 +205,34 @@
     max-width: 100%;
     height: auto;
     max-height: 200px;
-    margin-bottom: 6%;
+    margin-bottom: 4%;
 }
+
+/*Categoría*/
+.newpost-category{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 4%;
+}
+
+.newpost-category label{
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#category{
+	border-radius: 12px;
+	border: none;
+	background: #0e2951;
+	color: #ffffff;
+	font-size: 18px;
+	padding: 12px;
+	margin-top: 4px;
+}
+
 /*.newpost h3{
 	color: #ffffff;
 	font-size: 18px;

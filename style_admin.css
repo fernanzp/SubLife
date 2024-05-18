@@ -78,10 +78,16 @@
 	margin-bottom: 1%;
 }
 
+.table-container{
+	width: 75%;
+	border: solid 1px #0e2951;
+}
+
 .tabla_usuarios{
 	color: #ffffff;
-	width: 75%;
+	width: 100%;
 	font-size: 20px;
+	border-collapse: collapse;
 }
 
 .tabla_usuarios th, .tabla_usuarios td{
@@ -91,6 +97,10 @@
 
 .tabla_usuarios th{
 	background: #0e2951;
+}
+
+.tabla_usuarios td{
+	border-bottom: solid 1px #0e2951;
 }
 
 .tabla_usuarios svg{
