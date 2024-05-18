@@ -46,6 +46,14 @@
                 <input type="file" name="pdf" id="pdf">
             </div>-->
 
+            <div class="newpost-category">
+                <label for="category">Categoría</label>
+                <select name="category" id="category" required>
+                    <option value="0">Global</option>
+                    <option value="1">Manzanillo</option>
+                </select>
+            </div>
+
             <input type="submit" value="Enviar" class="newpost-btn" name="newpost">
         </form> 
     </div>
@@ -79,23 +87,26 @@
 
     include('conection.php');
 
-    //Verificar si se ha enviado el dormulario
+    // Verificar si se ha enviado el formulario
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //Recoger datos del formulario
+        // Recoger datos del formulario
         $title = $_POST['title'];
         $body = $_POST['body'];
+        $category = $_POST['category'];
         $img = $_FILES['img']['tmp_name'];
         $img_content = addslashes(file_get_contents($img));
         /*$pdf = $_FILES['pdf']['tmp_name'];
         $pdf_content = addslashes(file_get_contents($pdf));*/
 
-        //Consulta para insertar en la base de datos
-        $query = "INSERT INTO posts (id, title, body, img, pdf, created_at, status) VALUES (NULL, '$title', '$body', '$img_content', 'PDF', NOW(), 0)";
+        // Consulta para insertar en la base de datos
+        $query = "INSERT INTO posts (id, title, body, img, pdf, created_at, status, category) VALUES (NULL, '$title', '$body', '$img_content', 'PDF', NOW(), 0, '$category')";
 
-        //Ejecutar la consulta
+        // Ejecutar la consulta
         if ($conexion->query($query) === TRUE) {
             header("Location: index.php");
             exit();
+        } else {
+            echo "Error: " . $query . "<br>" . $conexion->error;
         }
         $conexion->close();
     }
