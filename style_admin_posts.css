@@ -27,7 +27,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 260px;
+	width: 210px;
 	margin-left: 2%;
 }
 
@@ -78,10 +78,16 @@
 	margin-bottom: 1%;
 }
 
+.table-container{
+	width: 80%;
+	border: solid 2px #0e2951;
+}
+
 .tabla_publicaciones{
 	color: #ffffff;
-	width: 75%;
+	width: 100%;
 	font-size: 20px;
+	border-collapse: collapse;
 }
 
 .tabla_publicaciones th, .tabla_publicaciones td{
@@ -91,6 +97,10 @@
 
 .tabla_publicaciones th{
 	background: #0e2951;
+}
+
+.tabla_publicaciones td{
+	border-bottom: solid 2px #0e2951;
 }
 
 .tabla_publicaciones img {

@@ -169,6 +169,7 @@
             ";
         }
         ?>
+        <a href="" class="news-button">Ver más</a>
     </div>
 
     <!--Manzanillo News-->
@@ -210,6 +211,7 @@
             ";
         }
         ?>
+        <a href="" class="news-button">Ver más</a>
     </div>
 
     <!--Footer-->

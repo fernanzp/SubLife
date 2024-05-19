@@ -80,7 +80,7 @@
 
 .table-container{
 	width: 75%;
-	border: solid 1px #0e2951;
+	border: solid 2px #0e2951;
 }
 
 .tabla_usuarios{
@@ -100,7 +100,7 @@
 }
 
 .tabla_usuarios td{
-	border-bottom: solid 1px #0e2951;
+	border-bottom: solid 2px #0e2951;
 }
 
 .tabla_usuarios svg{

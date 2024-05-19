@@ -465,6 +465,26 @@
 	z-index: 1;
 }
 
+.news-button{
+	display: flex;
+	width: max-content;
+	align-items: center;
+	justify-content: center;
+	background: #079cc7;
+	border-radius: 14px;
+	padding: 20px 19px 17px 19px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	transition: 0.3s ease;
+}
+
+.news-button:hover{
+	background: #ffffff;
+	color: #079cc7;
+}
+
 /*News responsive para tablets*/
 @media (max-width: 834px){
 	.news-container{

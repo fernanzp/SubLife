@@ -50,25 +50,41 @@ $conexion->close();
     </header>
 
     <!--Editar post-->
-    <div class="edit_post">
+    <div class="editpost">
         <h2>Editar Post</h2> 
         <form action="update_post.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="post_id" value="<?php echo $postId; ?>">
-            <label for="title">Título:</label>
-            <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($title); ?>" required><br>
+            <div class="editpost-inputcontainer">
+                <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($title); ?>" required>
+                <label class="lbl">
+                    <span class="text-span">Título</span>
+                </label>
+            </div>
 
-            <label for="body">Contenido:</label>
-            <textarea id="body" name="body" rows="5" required><?php echo htmlspecialchars($body); ?></textarea><br>
+            <div class="editpost-inputcontainer_body">
+                <textarea id="body" name="body" rows="5" required><?php echo htmlspecialchars($body); ?></textarea>
+                <label class="lbl">
+                    <span class="textarea-text-span">Contenido</span>
+                </label>
+            </div>
 
-            <label for="created_at">Fecha de Creación:</label>
-            <input type="date" id="created_at" name="created_at" value="<?php echo htmlspecialchars($created_at); ?>"><br>
+            <div class="editpost-inputcontainer">
+                <input type="date" id="created_at" name="created_at" value="<?php echo htmlspecialchars($created_at); ?>">
+                <label class="lbl">
+                    <span class="text-span">Fecha</span>
+                </label>
+            </div>
 
-            <label for="status">Estado:</label>
-            <input type="text" id="status" name="status" value="<?php echo htmlspecialchars($status); ?>"><br>
+            <div class="editpost-inputcontainer">
+                <input type="text" id="status" name="status" value="<?php echo htmlspecialchars($status); ?>">
+                <label class="lbl">
+                    <span class="text-span">Estado</span>
+                </label>
+            </div>
 
             <!-- Aquí puedes agregar la parte para editar la imagen si lo necesitas -->
 
-            <input type="submit" value="Guardar">
+            <button type="submit" class="editpost-btn">Guardar</button>
         </form>
     </div>
 </body>
