@@ -220,7 +220,6 @@
 	color: #ffffff;
 	font-size: 18px;
 	font-weight: bold;
-	cursor: pointer;
 }
 
 #category{
@@ -231,6 +230,7 @@
 	font-size: 18px;
 	padding: 12px;
 	margin-top: 4px;
+	cursor: pointer;
 }
 
 /*.newpost h3{

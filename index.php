@@ -98,21 +98,18 @@
 
     <!--Main News-->
     <?php
-        // Incluir el archivo de conexión
         include 'conection.php';
 
         // Consulta para obtener la publicación más reciente con status = 1 y categoría 0
         $sql = "SELECT * FROM posts WHERE status = 1 AND category = 0 ORDER BY id DESC LIMIT 1";
         $result = $conexion->query($sql);
 
-        // Verificar si hay resultados
         if ($result->num_rows > 0) {
-            // Obtener la fila de datos
             $row = $result->fetch_assoc();
+            $id = $row['id'];  // Obtener el ID de la publicación
             $title = $row['title'];
             $created_at = $row['created_at'];
             $img = $row['img'];
-            // Convertir la imagen de binario a base64
             $img_base64 = base64_encode($img);
         } else {
             echo "No hay publicaciones disponibles.";
@@ -123,24 +120,23 @@
         <div class="mainnews" style="background: url('data:image/jpeg;base64,<?php echo $img_base64; ?>') no-repeat center center; background-size: cover;">
             <h2 class="mainnews-title"><?php echo $title; ?></h2>
             <p><?php echo $created_at; ?></p>
-            <a href="" class="mainnews-button">
+            <a href="news.php?id=<?php echo $id; ?>" class="mainnews-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-                <path fill="#071441" d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
+                    <path fill="#071441" d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
                 </svg>Leer aquí</a>
         </div>
     </div>
 
     <!--News-->
     <?php
-        // Consulta para obtener las publicaciones con status = 1 y categoría 0, desde la segunda más reciente a la séptima más reciente
         $sql_news = "SELECT * FROM posts WHERE status = 1 AND category = 0 ORDER BY id DESC LIMIT 1, 6";
         $result_news = $conexion->query($sql_news);
 
-        // Verificar si hay resultados
         if ($result_news->num_rows > 0) {
             $news = [];
             while ($row_news = $result_news->fetch_assoc()) {
                 $news[] = [
+                    'id' => $row_news['id'],  // Obtener el ID de la publicación
                     'title' => $row_news['title'],
                     'created_at' => $row_news['created_at'],
                     'img' => base64_encode($row_news['img'])
@@ -155,13 +151,14 @@
         <?php
         $classes = ['new1', 'new2'];
         foreach ($news as $index => $item) {
+            $id = $item['id'];  // Obtener el ID de la publicación
             $title = $item['title'];
             $created_at = $item['created_at'];
             $img_base64 = $item['img'];
             $class = $classes[$index % 2];
             echo "
             <div class=\"news-newscontainer $class n" . ($index + 1) . "\" style=\"background-image: url('data:image/jpeg;base64,$img_base64');\">
-                <a href=\"#\" class=\"news-newcontent\">
+                <a href=\"news.php?id=$id\" class=\"news-newcontent\">
                     <h3>$title</h3>
                     <p>$created_at</p>
                 </a>
@@ -169,20 +166,19 @@
             ";
         }
         ?>
-        <a href="" class="news-button">Ver más</a>
+        <a href="news_panel.php" class="news-button">Ver más</a>
     </div>
 
     <!--Manzanillo News-->
     <?php
-        // Consulta para obtener las publicaciones con status = 1 y categoría 1
         $sql_manzanillo = "SELECT * FROM posts WHERE status = 1 AND category = 1 ORDER BY id DESC LIMIT 6";
         $result_manzanillo = $conexion->query($sql_manzanillo);
 
-        // Verificar si hay resultados
         if ($result_manzanillo->num_rows > 0) {
             $manzanillo_news = [];
             while ($row_manzanillo = $result_manzanillo->fetch_assoc()) {
                 $manzanillo_news[] = [
+                    'id' => $row_manzanillo['id'],  // Obtener el ID de la publicación
                     'title' => $row_manzanillo['title'],
                     'created_at' => $row_manzanillo['created_at'],
                     'img' => base64_encode($row_manzanillo['img'])
@@ -197,13 +193,14 @@
         <h2>Manzanillo</h2>
         <?php
         foreach ($manzanillo_news as $index => $item) {
+            $id = $item['id'];  // Obtener el ID de la publicación
             $title = $item['title'];
             $created_at = $item['created_at'];
             $img_base64 = $item['img'];
             $class = $classes[$index % 2];
             echo "
             <div class=\"news-newscontainer $class nz" . ($index + 1) . "\" style=\"background-image: url('data:image/jpeg;base64,$img_base64');\">
-                <a href=\"#\" class=\"news-newcontent\">
+                <a href=\"news.php?id=$id\" class=\"news-newcontent\">
                     <h3>$title</h3>
                     <p>$created_at</p>
                 </a>
@@ -211,7 +208,7 @@
             ";
         }
         ?>
-        <a href="" class="news-button">Ver más</a>
+        <a href="news_panel.php" class="news-button">Ver más</a>
     </div>
 
     <!--Footer-->

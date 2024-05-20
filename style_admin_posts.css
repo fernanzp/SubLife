@@ -101,6 +101,27 @@
 
 .tabla_publicaciones td{
 	border-bottom: solid 2px #0e2951;
+	max-width: 450px;
+}
+
+.tabla_publicaciones td a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	font-weight: bold;
+	transition: 0.3s ease;
+}
+
+.tabla_publicaciones td a:hover {
+	color: #079cc7;
+	svg path {
+		fill: #079cc7;
+  	}
+}
+
+.viewpost_icon{
+	margin-right: 10px;
 }
 
 .tabla_publicaciones img {
