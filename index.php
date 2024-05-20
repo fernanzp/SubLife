@@ -33,7 +33,7 @@
                     <a id="go-to-news">Noticias</a>
                     <a id="go-to-mzo">Manzanillo</a>
                     <?php
-                        if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] == 1) {
+                        if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] >= 1) {
                             echo '<a href="newpost.php">Nueva Publicación</a>';
                         }
                         if(isset($_SESSION['user_data']['role']) && $_SESSION['user_data']['role'] == 2) {

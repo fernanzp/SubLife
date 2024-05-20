@@ -129,7 +129,7 @@ body{
 .otherpost img{
 	width: 100%;
 	height: auto;
-
+	cursor: pointer;
 }
 
 .otherpost h4{
@@ -137,6 +137,7 @@ body{
 	font-size: 22px;
 	font-weight: bold;
 	text-align: center;
+	cursor: pointer;
 }
 
 /*Estilos de ver post para el admin*/
@@ -147,4 +148,64 @@ body{
 
 .main-container-admin{
 	width: 75%;
+}
+
+/*Footer*/
+.footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5%;
+	background: #071441;
+}
+
+.footer-logo{
+	height: 120px;
+}
+
+.footer-socialmedia-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-socialmedia{
+	display: flex;
+}
+
+.footer-socialmedia-item{
+	margin-right: 18px;
+}
+
+.footer-socialmedia-item-link svg{
+	width: 30px;
+	height: 30px;
+}
+
+.footer-socialmedia-item-link svg path{
+	transition: fill 0.3s ease;
+}
+
+.footer-socialmedia-item-link:hover svg path{
+	fill: #079cc7;
+}
+
+/*Footer responsive para tablets*/
+@media (max-width: 834px){
+	.footer-logo{
+		height: 100px;
+	}
+
+	.footer-socialmedia-item-link svg{
+		width: 25px;
+		height: 25px;
+	}
+}
+
+/*Footer responsive para celulares*/
+@media (max-width: 480px){
+	.footer-logo{
+		height: 80px;
+	}
 }
