@@ -68,18 +68,21 @@
                 </label>
             </div>
 
-            <div class="edituser-inputcontainer">
-                <input type="text" id="role" name="role" value="<?php echo $role; ?>">
-                <label class="lbl">
-                    <span class="text-span">Rol</span>
-                </label>
+            <div class="edituser-inputcontainer-role">
+                <label for="role">Rol</label>
+                <select id="role" name="role" required>
+                    <option value="2" <?php echo ($role == 2) ? 'selected' : ''; ?>>Administrador</option>
+                    <option value="1" <?php echo ($role == 1) ? 'selected' : ''; ?>>Bloguero</option>
+                    <option value="0" <?php echo ($role == 0) ? 'selected' : ''; ?>>Lector</option>
+                </select>
             </div>
 
-            <div class="edituser-inputcontainer">
-                <input type="text" id="status" name="status" value="<?php echo $status; ?>">
-                <label class="lbl">
-                    <span class="text-span">Estado</span>
-                </label>
+            <div class="edituser-inputcontainer-status">
+                <label for="status">Estado</label>
+                <select id="status" name="status" required>
+                    <option value="1" <?php echo ($status == 1) ? 'selected' : ''; ?>>Activo</option>
+                    <option value="0" <?php echo ($status == 0) ? 'selected' : ''; ?>>Inactivo</option>
+                </select>
             </div>
 
             <input type="hidden" name="user_id" value="<?php echo $userId; ?>">
